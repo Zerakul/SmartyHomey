@@ -6,8 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/kitchen"
-    tools:context="com.homey.smarty.smartyhomey.KitchenActivity"
+
     >
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
     <com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout
         android:id="@+id/fabtoolbar"
         android:layout_width="match_parent"
@@ -65,8 +74,16 @@
 
         </LinearLayout>
 
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/waterglass"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="110dp"
+            android:id="@+id/imageView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
 
 
     </com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout>
-
 </RelativeLayout>

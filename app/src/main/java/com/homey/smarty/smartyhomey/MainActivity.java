@@ -15,6 +15,14 @@ public class MainActivity extends FragmentActivity {
     //TODO add icons to fab with kitchen/bathroom and sleep room
     //TODO add settings screen (Seiran will do)
     //TODO shopping list
+    //TODO notification class (Seiran will do)
+    //TODO actions to the Icons
+    //TODO timer class (Seiran will do)
+    //TODO code cleanup
+    //TODO change popup colors
+    //TODO TTS on pause (shutdown)
+    //TODO Bathrom/SleepRoom (DANA)
+    //TODO kitchen living room settings activity (Seiran)
 
 
     public FABToolbarLayout layout;

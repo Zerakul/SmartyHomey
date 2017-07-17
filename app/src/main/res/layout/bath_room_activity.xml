@@ -8,6 +8,7 @@
     android:background="@drawable/bathroom"
     tools:context="com.homey.smarty.smartyhomey.KitchenActivity"
     >
+
     <com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout
         android:id="@+id/fabtoolbar"
         android:layout_width="match_parent"
@@ -54,7 +55,9 @@
                 android:layout_weight="0.3"
                 android:onClick="onKitchenBtnTap"
                 android:scaleType="centerInside"
+
                 android:src="@mipmap/ic_launcher"/>
+
 
 
 
@@ -65,6 +68,16 @@
 
         </LinearLayout>
 
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/twoelblue"
+            android:id="@+id/imageView"
+            android:onClick="doSome"
+            android:layout_marginEnd="382dp"
+            android:layout_marginTop="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
 
 
     </com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout>

@@ -9,6 +9,7 @@ import android.view.View;
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 
 public class MainActivity extends FragmentActivity {
+//TODO change activity icon
 
     //Test
     public FABToolbarLayout layout;

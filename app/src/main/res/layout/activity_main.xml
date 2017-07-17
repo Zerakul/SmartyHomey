@@ -5,7 +5,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/room2"
+    android:background="@drawable/livingroom"
     tools:context="com.homey.smarty.smartyhomey.MainActivity"
     >
     <com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout

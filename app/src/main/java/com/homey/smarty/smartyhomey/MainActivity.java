@@ -11,6 +11,7 @@ import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
     //Test Dana
 
 public class MainActivity extends FragmentActivity {
+//TODO change activity icon
 
     //Test
     public FABToolbarLayout layout;

@@ -219,7 +219,7 @@ public class PopUpManager {
               //Getting the View object as defined in the custom_settings_popup.xml file
         View layout = li.inflate(R.layout.custom_settings_popup, (ViewGroup) mAcivity.findViewById(R.id.settingsPopUp));
           Button setBtn = (Button) layout.findViewById(R.id.settBtn);
-         Button logBtn = (Button) layout.findViewById(R.id.logBtn);
+
 
         final Toast toast = new Toast(appContext);
 
@@ -237,16 +237,7 @@ public class PopUpManager {
                     }
                 });
 
-                logBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent myIntent = new Intent(mAcivity, LogActivity.class);
-                        //myIntent.putExtra("key", value); //Optional parameters
-                        mAcivity.startActivity(myIntent);
-                        toast.cancel();
 
-                    }
-                });
 
 
 

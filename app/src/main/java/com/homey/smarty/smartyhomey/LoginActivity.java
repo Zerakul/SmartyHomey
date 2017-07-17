@@ -189,8 +189,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             } else {
-              //  PopUpManager mPopUpManager = new PopUpManager(this, LoginActivity.this);
-              //  mPopUpManager.customErrorToast(getResources().getString(R.string.invalid_sign_in_params));
+                PopUpManager mPopUpManager = new PopUpManager(this, LoginActivity.this);
+                mPopUpManager.customErrorToast(getResources().getString(R.string.invalid_sign_in_params));
             }
         }
     }

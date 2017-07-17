@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 import com.homey.smarty.smartyhomey.MainActivity;
 import com.homey.smarty.smartyhomey.R;
-import com.example.zerakul.spraybydrone.Settings.SettingsActivity;
+
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
@@ -123,7 +123,7 @@ public class PopUpManager {
 
         ViewGroup containter = (ViewGroup) layoutInflater.inflate(layout, null);
         popupWindow = new PopupWindow(containter, 235, 250, true);
-        popupWindow.showAtLocation(mAcivity.findViewById(R.id.mapFragment), Gravity.NO_GRAVITY, pnt.x, pnt.y + 18);
+        //popupWindow.showAtLocation(mAcivity.findViewById(R.id.mapFragment), Gravity.NO_GRAVITY, pnt.x, pnt.y + 18);
 
         containter.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -217,25 +217,25 @@ public class PopUpManager {
     public void customSettingsToast(){
      LayoutInflater li = (LayoutInflater) appContext.getSystemService(LAYOUT_INFLATER_SERVICE);
               //Getting the View object as defined in the custom_settings_popup.xml file
-        View layout = li.inflate(R.layout.custom_settings_popup, (ViewGroup) mAcivity.findViewById(R.id.settingsPopUp));
-          Button setBtn = (Button) layout.findViewById(R.id.settBtn);
+//        View layout = li.inflate(R.layout.custom_settings_popup, (ViewGroup) mAcivity.findViewById(R.id.settingsPopUp));
+//        Button setBtn = (Button) layout.findViewById(R.id.settBtn);
 
 
         final Toast toast = new Toast(appContext);
 
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setGravity(Gravity.RIGHT, 0, 270);
-        toast.setView(layout);//setting the view of custom toast layout
+       // toast.setView(layout);//setting the view of custom toast layout
         toast.show();
-                setBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent myIntent = new Intent(mAcivity, SettingsActivity.class);
-                        //myIntent.putExtra("key", value); //Optional parameters
-                        mAcivity.startActivity(myIntent);
-                        toast.cancel();
-                    }
-                });
+//                setBtn.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Intent myIntent = new Intent(mAcivity, SettingsActivity.class);
+//                        //myIntent.putExtra("key", value); //Optional parameters
+//                        mAcivity.startActivity(myIntent);
+//                        toast.cancel();
+//                    }
+//                });
 
 
 

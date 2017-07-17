@@ -37,7 +37,7 @@ public class PopUpManager {
      * @param applicationContext applicaiton who will call the popup
      * @param mainActivity the activity that will calll the popups
      */
-    public PopUpManager(Context applicationContext, MainActivity mainActivity) {
+    public PopUpManager(Context applicationContext, Activity mainActivity) {
         this.appContext = applicationContext;
         this.mAcivity = mainActivity;
     }
@@ -199,7 +199,7 @@ public class PopUpManager {
 
         iText.setText(text);
         toast.setDuration(Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.LEFT, 0, 270);
+        //toast.setGravity(Gravity.LEFT, 0, 270);
         toast.setView(layout);//setting the view of custom toast layout
         toast.show();
     }

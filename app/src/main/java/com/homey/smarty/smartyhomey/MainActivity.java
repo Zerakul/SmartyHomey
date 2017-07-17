@@ -8,8 +8,6 @@ import android.view.View;
 
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 
-    //Test Dana
-
 public class MainActivity extends FragmentActivity {
 
     //Test

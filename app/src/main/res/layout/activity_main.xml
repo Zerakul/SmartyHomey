@@ -48,13 +48,33 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/connectBtn"
+                android:id="@+id/kitchenBTN"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:onClick="onBtnConnectTap"
+                android:onClick="onKitchenBtnTap"
                 android:scaleType="centerInside"
                 android:src="@mipmap/ic_launcher"/>
+
+
+            <ImageView
+                android:id="@+id/bathBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:onClick="onBathroomBtnTap"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_launcher"/>
+
+            <ImageView
+                android:id="@+id/sleepBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:onClick="onSleepRoomBtnTap"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_launcher"/>
+
 
 
 

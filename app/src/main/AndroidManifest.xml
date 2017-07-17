@@ -25,6 +25,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"></activity>
+        <activity
+            android:name=".BathRoomActivity"
+            android:label="BathRoom"></activity>
+        <activity
+            android:name=".KitchenActivity"
+            android:label="Kitchen"></activity>
+        <activity
+            android:name=".SleepRoomActivity"
+            android:label="SleepRoom"></activity>
     </application>
 
 </manifest>

@@ -1,17 +1,22 @@
 package com.homey.smarty.smartyhomey;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 
-public class MainActivity extends FragmentActivity {
-//TODO change activity icon
 
-    //Test
+
+public class MainActivity extends FragmentActivity {
+    //TODO add icons to fab with kitchen/bathroom and sleep room
+    //TODO add settings screen (Seiran will do)
+    //TODO shopping list
+
+
     public FABToolbarLayout layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,4 +45,30 @@ public class MainActivity extends FragmentActivity {
             }
         });
     }
+
+
+    public void onKitchenBtnTap(View V){
+
+        Intent i = new Intent(MainActivity.this, KitchenActivity.class);
+        startActivity(i);
+
+
+    }
+
+    public void onBathroomBtnTap(View V){
+
+        Intent i = new Intent(MainActivity.this, BathRoomActivity.class);
+        startActivity(i);
+
+
+    }
+
+    public void onSleepRoomBtnTap(View V){
+
+        Intent i = new Intent(MainActivity.this, SleepRoomActivity.class);
+        startActivity(i);
+
+
+    }
+
 }

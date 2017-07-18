@@ -56,7 +56,7 @@ public class PopUpManager {
         layoutInflater = (LayoutInflater) appContext.getSystemService(LAYOUT_INFLATER_SERVICE);
         ViewGroup containter = (ViewGroup) layoutInflater.inflate(layout, null);
         popupWindow = new PopupWindow(containter, 300, 300, true);
-        popupWindow.showAtLocation(v,Gravity.NO_GRAVITY,0,0);
+        popupWindow.showAtLocation(v,Gravity.NO_GRAVITY,400,200);
 
 
 

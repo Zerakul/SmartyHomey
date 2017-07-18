@@ -69,7 +69,7 @@ public class TTSManager {
      */
     public void talk(String string) {
 
-        if(sharedPreferences.getBoolean(ConstantValues.UI_VOICE_SWITCH,false))
+        if(sharedPreferences.getBoolean(ConstantValues.UI_VOICE_SWITCH,true))
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ttsGreater21(string, TextToSpeech.QUEUE_FLUSH);
         } else {
@@ -85,7 +85,7 @@ public class TTSManager {
      */
     public void talkLater(String s){
 
-        if(sharedPreferences.getBoolean(ConstantValues.UI_VOICE_SWITCH,false))
+        if(sharedPreferences.getBoolean(ConstantValues.UI_VOICE_SWITCH,true))
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ttsGreater21(s, TextToSpeech.QUEUE_ADD);
         } else {

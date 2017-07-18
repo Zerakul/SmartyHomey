@@ -47,21 +47,18 @@ public class PopUpManager {
      *Make window Poppup and showto user
      * @param v the view who initiated the popup
      * @param layout the layout of the popup
-     * @param right popup location ,right or left
+
      */
-    public void makePopUp(View v, int layout, boolean right) {
+    public void makePopUp(View v, int layout) {
 
         int[] loc_int = new int[2];
         v.getLocationOnScreen(loc_int);
         layoutInflater = (LayoutInflater) appContext.getSystemService(LAYOUT_INFLATER_SERVICE);
         ViewGroup containter = (ViewGroup) layoutInflater.inflate(layout, null);
         popupWindow = new PopupWindow(containter, 300, 300, true);
+        popupWindow.showAtLocation(v,Gravity.NO_GRAVITY,0,0);
 
-        //if left window get offset from left else get offset from right
-        if(!right)
-            popupWindow.showAtLocation(v, Gravity.NO_GRAVITY, loc_int[0] + v.getHeight(), loc_int[1] + (v.getWidth() / 4));
-        else
-            popupWindow.showAtLocation(v, Gravity.NO_GRAVITY, loc_int[0] - v.getHeight()*4, loc_int[1] + (v.getWidth() / 4));
+
 
 
         containter.setOnTouchListener(new View.OnTouchListener() {

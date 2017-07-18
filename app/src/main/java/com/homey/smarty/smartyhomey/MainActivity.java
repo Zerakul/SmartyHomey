@@ -20,7 +20,7 @@ public class MainActivity extends FragmentActivity {
     //TODO timer class (Seiran will do)
     //TODO code cleanup
     //TODO change popup colors
-    //TODO TTS on pause (shutdown)
+    //TODO TTS on pause (example in kitchen activity)
     //TODO Bathrom/SleepRoom (DANA)
     //TODO kitchen living room settings activity (Seiran)
 

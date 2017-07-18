@@ -188,6 +188,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             if(Controller.VerifyUser(email, password)) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             } else {
                 PopUpManager mPopUpManager = new PopUpManager(this, LoginActivity.this);
                 mPopUpManager.customErrorToast(getResources().getString(R.string.invalid_sign_in_params));

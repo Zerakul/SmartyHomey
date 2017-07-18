@@ -54,7 +54,7 @@
                 android:layout_weight="0.3"
                 android:onClick="onKitchenBtnTap"
                 android:scaleType="centerInside"
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@drawable/kitchenicon"/>
 
 
             <ImageView

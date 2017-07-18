@@ -58,9 +58,6 @@ public class PopUpManager {
         popupWindow = new PopupWindow(containter, 300, 300, true);
         popupWindow.showAtLocation(v,Gravity.NO_GRAVITY,0,0);
 
-
-
-
         containter.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -70,7 +67,6 @@ public class PopUpManager {
         });
 
     }
-
 
     /**
      * Initiate the popup window.

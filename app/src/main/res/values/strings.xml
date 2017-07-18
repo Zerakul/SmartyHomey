@@ -30,4 +30,5 @@
         <item>9</item>
 
     </string-array>
+    <string name="start_washing_machine">When would you like to start wasing?</string>
 </resources>

@@ -3,7 +3,7 @@ package com.homey.smarty.smartyhomey.Managers;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
+
 import android.graphics.Color;
 import android.graphics.Point;
 import android.view.Gravity;
@@ -11,15 +11,13 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.homey.smarty.smartyhomey.MainActivity;
 import com.homey.smarty.smartyhomey.R;
-
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 

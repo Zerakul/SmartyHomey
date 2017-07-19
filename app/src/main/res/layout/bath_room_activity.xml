@@ -56,7 +56,7 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/bathroom"/>
 
-            <!-- android:onClick="onKitchenBtnTap" -->
+            <!-- android:onClick="onKitchenBtnTap"
 
             <ImageView
                 android:layout_width="0dp"
@@ -92,7 +92,7 @@
                 android:layout_weight="0.1"
                 android:onClick="noLaundry"
                 android:src ="@drawable/laundry_empty"/>
-
+ -->
         </LinearLayout>
 
         <ImageView
@@ -128,6 +128,7 @@
             android:layout_marginTop="16dp"
             android:layout_alignEnd="@+id/WashingMachineImg"
             android:tag="full"/>
+
 
 
     </com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout>

@@ -6,15 +6,6 @@
     android:layout_height="match_parent">
 
 
-    <Button
-        android:text="Proceed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/proceedBTN"
-        android:layout_marginBottom="24dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
@@ -32,16 +23,8 @@
         android:layout_below="@+id/textView"
         android:layout_alignStart="@+id/textView"
         android:layout_marginTop="17dp"
-        android:id="@+id/textView2" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_marginTop="26dp"
-        android:id="@+id/textView3" />
+        android:id="@+id/textView2"
+        android:layout_alignEnd="@+id/proceedBTN" />
 
     <TextView
         android:text="TextView"
@@ -63,18 +46,19 @@
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner"
-        android:entries="@array/shoppinglist"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toEndOf="@+id/textView" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/spinner5"
         android:entries="@array/shoppinglist"
         android:layout_alignTop="@+id/textView4"
         android:layout_alignStart="@+id/spinner3" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/proceedBTN"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="195dp"
+        android:id="@+id/cnclbtn" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -82,6 +66,34 @@
         android:id="@+id/spinner6"
         android:entries="@array/shoppinglist"
         android:layout_alignTop="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:layout_alignEnd="@+id/cnclbtn"
+        android:layout_marginEnd="36dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:entries="@array/shoppinglist"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignStart="@+id/spinner6" />
+
+    <Button
+        android:text="Proceed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/proceedBTN"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/spinner5"
+        android:layout_marginEnd="133dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/spinner"
+        android:layout_alignStart="@+id/textView2" />
 
 </RelativeLayout>

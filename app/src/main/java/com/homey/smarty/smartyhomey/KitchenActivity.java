@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
+import com.homey.smarty.smartyhomey.Managers.NotifierManager;
 import com.homey.smarty.smartyhomey.Managers.PopUpManager;
 import com.homey.smarty.smartyhomey.Managers.TTSManager;
 
@@ -19,6 +20,7 @@ public class KitchenActivity extends FragmentActivity {
     public FABToolbarLayout layout;
     public TTSManager tts;
     public PopUpManager pm;
+    public NotifierManager nm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class KitchenActivity extends FragmentActivity {
         pm = new PopUpManager(this, KitchenActivity.this);
 
         tts = new TTSManager(this);
+
+        nm = new NotifierManager(this);
 
         setFab();
     }
@@ -50,6 +54,9 @@ public class KitchenActivity extends FragmentActivity {
         wg.setImageResource(R.drawable.water_glass_empty);
 
         tts.talkLater("Water Drinked");
+
+
+
 
     }
 

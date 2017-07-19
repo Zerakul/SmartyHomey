@@ -24,7 +24,7 @@ public class NotifierManager {
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(cont)
-                        .setSmallIcon(R.mipmap.smart_home_logo)
+                        .setSmallIcon(R.mipmap.ic_logo)
                         .setContentTitle(title)
                         .setContentText(text);
 

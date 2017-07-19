@@ -9,5 +9,5 @@
         android:width="2dp"
         android:color="@android:color/background_dark" />
     <solid
-        android:color="#00a4f0"/>
+        android:color="@color/SoftBackgroud" />
 </shape>

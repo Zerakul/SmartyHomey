@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
+import com.homey.smarty.smartyhomey.Managers.NotifierManager;
 import com.homey.smarty.smartyhomey.Managers.PopUpManager;
 import com.homey.smarty.smartyhomey.Managers.TTSManager;
 
@@ -22,6 +23,7 @@ public class BathRoomActivity extends FragmentActivity {
     private FABToolbarLayout layout;
     private TTSManager mTtsManager;
     private PopUpManager mPopUpManager;
+    private NotifierManager mNotifierManager;
 
     private ImageView mWashingMachine;
     private ImageView mLaundaryImg;
@@ -38,6 +40,7 @@ public class BathRoomActivity extends FragmentActivity {
 
         mPopUpManager = new PopUpManager(this, BathRoomActivity.this);
         mTtsManager = new TTSManager(this);
+        mNotifierManager = new NotifierManager(this);
 
         mWashingMachine = (ImageView) findViewById(R.id.WashingMachineImg);
         mLaundaryImg = (ImageView) findViewById(R.id.LaundryBasket);
@@ -68,6 +71,9 @@ public class BathRoomActivity extends FragmentActivity {
 
             mTowelImg.setImageResource(R.drawable.towel_blue);
             mTowelImg.setTag("blue");
+        } else {
+            mTtsManager.talkLater("The towel is new");
+            mPopUpManager.customInfoToast("The towel is new");
         }
     }
 
@@ -77,9 +83,9 @@ public class BathRoomActivity extends FragmentActivity {
                 mPopUpManager.makePopUp(v, R.layout.washingmachine_popup);
                 mTtsManager.talkLater("Start washing machine");
                 mPopUpManager.customInfoToast("Start washing machine");
+                mNotifierManager.newNotification("Smarty Homey New Message", "Starting Washing machine");
                 mWashingMachine.setImageResource(R.drawable.washing_machine_red);
                 mWashingMachine.setTag("working");
-
                 noLaundry(v);
             } else {
                 mTtsManager.talkLater("no clothes to wash");
@@ -95,6 +101,7 @@ public class BathRoomActivity extends FragmentActivity {
 
     public void doneWashing (View v) {
         if(mWashingMachine.getTag().equals("working")) {
+            mNotifierManager.newNotification("Smarty Homey New Message", "Washing machine finished");
             mTtsManager.talkLater("washing machine finished");
             mPopUpManager.customInfoToast("washing machine finished");
             mWashingMachine.setImageResource(R.drawable.washing_machine_green);
@@ -118,15 +125,15 @@ public class BathRoomActivity extends FragmentActivity {
 
     public void noLaundry (View v) {
         mLaundaryImg.setImageResource(R.drawable.laundry_basket_empty);
-        mLaundaryImg.setTag("empty");
 
         if(mLaundaryImg.getTag().equals("empty")){
             mTtsManager.talkLater("no laundry to wash");
             mPopUpManager.customInfoToast("No laundry to wash");
         } else {
-            mTtsManager.talkLater("laundry after wash");
-            mPopUpManager.customInfoToast("Laundry after wash");
+            mTtsManager.talkLater("No new laundry");
+            mPopUpManager.customInfoToast("No new laundry");
         }
+        mLaundaryImg.setTag("empty");
     }
 
     private void setFab() {

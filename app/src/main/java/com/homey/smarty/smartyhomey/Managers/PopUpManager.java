@@ -125,8 +125,6 @@ public class PopUpManager {
         });
 
 
-
-
     }
 
     /**
@@ -205,9 +203,9 @@ public class PopUpManager {
     }
 
 
-    public void customSettingsToast(){
-     LayoutInflater li = (LayoutInflater) appContext.getSystemService(LAYOUT_INFLATER_SERVICE);
-              //Getting the View object as defined in the custom_settings_popup.xml file
+    public void customSettingsToast() {
+        LayoutInflater li = (LayoutInflater) appContext.getSystemService(LAYOUT_INFLATER_SERVICE);
+        //Getting the View object as defined in the custom_settings_popup.xml file
 //        View layout = li.inflate(R.layout.custom_settings_popup, (ViewGroup) mAcivity.findViewById(R.id.settingsPopUp));
 //        Button setBtn = (Button) layout.findViewById(R.id.settBtn);
 
@@ -216,7 +214,7 @@ public class PopUpManager {
 
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setGravity(Gravity.RIGHT, 0, 270);
-       // toast.setView(layout);//setting the view of custom toast layout
+        // toast.setView(layout);//setting the view of custom toast layout
         toast.show();
 //                setBtn.setOnClickListener(new View.OnClickListener() {
 //                    @Override
@@ -227,11 +225,5 @@ public class PopUpManager {
 //                        toast.cancel();
 //                    }
 //                });
-
-
-
-
-
-                           }
-
+    }
 }

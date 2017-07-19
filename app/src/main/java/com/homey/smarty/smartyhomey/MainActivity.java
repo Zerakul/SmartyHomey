@@ -12,21 +12,17 @@ import android.view.WindowManager;
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 
 
-
 public class MainActivity extends FragmentActivity {
-    //TODO add icons to fab with kitchen/bathroom and sleep room - Done :)
     //TODO add settings screen (Seiran will do)
     //TODO shopping list
-
+    //TODO Washing machine Windows
     //TODO actions to the Icons
-
     //TODO code cleanup
-    //TODO change popup colors
     //TODO kitchen living room settings activity (Seiran)
 
 
-
     public FABToolbarLayout layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,28 +57,19 @@ public class MainActivity extends FragmentActivity {
     }
 
 
-    public void onKitchenBtnTap(View V){
-
+    public void onKitchenBtnTap(View V) {
         Intent i = new Intent(MainActivity.this, KitchenActivity.class);
         startActivity(i);
-
-
     }
 
-    public void onBathroomBtnTap(View V){
-
+    public void onBathroomBtnTap(View V) {
         Intent i = new Intent(MainActivity.this, BathRoomActivity.class);
         startActivity(i);
-
-
     }
 
-    public void onSleepRoomBtnTap(View V){
-
+    public void onSleepRoomBtnTap(View V) {
         Intent i = new Intent(MainActivity.this, SleepRoomActivity.class);
         startActivity(i);
-
-
     }
 
 }

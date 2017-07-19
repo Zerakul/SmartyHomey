@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 import com.homey.smarty.smartyhomey.Managers.PopUpManager;
@@ -36,6 +37,68 @@ public class SleepRoomActivity extends FragmentActivity {
         mTtsManager = new TTSManager(this);
 
         setFab();
+    }
+
+    public void pijamaTaken(View v) {
+        ImageView mPijaamaImg = (ImageView) findViewById(R.id.pijamaImg);
+        if(mPijaamaImg.getVisibility() == View.VISIBLE) {
+            mTtsManager.talkLater("The pijama was taken");
+            mPopUpManager.customInfoToast("The pijama was taken");
+            mPijaamaImg.setVisibility(View.INVISIBLE);
+        } else {
+            mTtsManager.talkLater("Ask Closet to choose pijama");
+            mPopUpManager.customInfoToast("Ask Closet to choose pijama");
+        }
+    }
+
+
+    public void bedTempreatureStatus(View v) {
+        ImageView mBedImg = (ImageView) findViewById(R.id.bedTempreatureImg);
+        if(mBedImg.getTag().equals("cold")) {
+            mTtsManager.talkLater("The bed is cold");
+            mPopUpManager.customInfoToast("The bed is cold");
+        } else {
+            mTtsManager.talkLater("The bed is warm");
+            mPopUpManager.customInfoToast("The bed is warm");
+        }
+    }
+
+    public void washingPijama(View v) {
+        ImageView mPijaamaImg = (ImageView) findViewById(R.id.pijamaImg);
+        mTtsManager.talkLater("Sending pijama to washing machine");
+        mPopUpManager.customInfoToast("Sending pijama to washing machine");
+        mPijaamaImg.setVisibility(View.INVISIBLE);
+    }
+
+    public void selectingPijama(View v) {
+        ImageView mPijaamaImg = (ImageView) findViewById(R.id.pijamaImg);
+
+        mTtsManager.talkLater("Choosing pijama");
+        mPopUpManager.customInfoToast("Choosing pijama");
+
+        mPijaamaImg.setVisibility(View.VISIBLE);
+    }
+
+    public void wearingPijama(View v) {
+        ImageView mPijaamaImg = (ImageView) findViewById(R.id.pijamaImg);
+        if(mPijaamaImg.getVisibility() == View.INVISIBLE) {
+            mTtsManager.talkLater("No pijama to wear, ask closet to choose");
+            mPopUpManager.customInfoToast("No pijama to wear, ask closet to choose");
+        } else {
+            mTtsManager.talkLater("Wearing pijama");
+            mPopUpManager.customInfoToast("Wearing pijama");
+            mPijaamaImg.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    public void warmingBed(View v) {
+        ImageView mBedImg = (ImageView) findViewById(R.id.bedTempreatureImg);
+
+        mTtsManager.talkLater("Warming bed");
+        mPopUpManager.customInfoToast("Warming bed");
+
+        mBedImg.setImageResource(R.drawable.hot_temperature);
+        mBedImg.setTag("warm");
     }
 
     private void setFab() {

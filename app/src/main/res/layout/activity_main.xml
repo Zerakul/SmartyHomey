@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:fabSize="normal"
-                android:src="@mipmap/smart_home_logo"
+                android:src="@mipmap/ic_logo"
                 app:backgroundTint="@color/CoralRif" />
 
         </RelativeLayout>

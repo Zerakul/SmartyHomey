@@ -17,7 +17,6 @@ import com.homey.smarty.smartyhomey.Settings.SettingsActivity;
 
 
 public class MainActivity extends FragmentActivity {
-    //TODO code cleanup
 
     public FABToolbarLayout layout;
     public TTSManager tts ;

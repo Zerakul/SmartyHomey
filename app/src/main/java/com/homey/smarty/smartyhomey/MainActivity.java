@@ -17,13 +17,7 @@ import com.homey.smarty.smartyhomey.Settings.SettingsActivity;
 
 
 public class MainActivity extends FragmentActivity {
-    //TODO add settings screen (Seiran will do)
-    //TODO shopping list
-    //TODO Washing machine Windows
-    //TODO actions to the Icons
     //TODO code cleanup
-    //TODO kitchen living room settings activity (Seiran)
-
 
     public FABToolbarLayout layout;
     public TTSManager tts ;

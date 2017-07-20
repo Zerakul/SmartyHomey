@@ -1,6 +1,8 @@
 package com.homey.smarty.smartyhomey;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TimePicker;
 
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 import com.homey.smarty.smartyhomey.Managers.NotifierManager;
@@ -81,12 +84,6 @@ public class BathRoomActivity extends FragmentActivity {
         if (mWashingMachine.getTag().equals("ready")) {
             if(mLaundaryImg.getTag().equals("full")) {
                 mPopUpManager.makePopUp(v, R.layout.washingmachine_popup);
-                mTtsManager.talkLater("Start washing machine");
-                mPopUpManager.customInfoToast("Start washing machine");
-                mNotifierManager.newNotification("Smarty Homey New Message", "Starting Washing machine");
-                mWashingMachine.setImageResource(R.drawable.washing_machine_red);
-                mWashingMachine.setTag("working");
-                noLaundry(v);
             } else {
                 mTtsManager.talkLater("no clothes to wash");
                 mPopUpManager.customInfoToast("No clothes to wash");
@@ -99,6 +96,18 @@ public class BathRoomActivity extends FragmentActivity {
         }
     }
 
+    public void startWashingActivity(View v) {
+        if(mWashingMachine.getTag().equals("ready")) {
+            mTtsManager.talkLater("Start washing machine");
+            mNotifierManager.newNotification("Smarty Homey New Message", "Starting Washing machine");
+            mWashingMachine.setImageResource(R.drawable.washing_machine_red);
+            mWashingMachine.setTag("working");
+            noLaundry(v);
+        } else {
+            mTtsManager.talkLater("washing machine already working");
+            mPopUpManager.customInfoToast("Washing machine already working");
+        }
+    }
     public void doneWashing (View v) {
         if(mWashingMachine.getTag().equals("working")) {
             mNotifierManager.newNotification("Smarty Homey New Message", "Washing machine finished");
@@ -154,6 +163,16 @@ public class BathRoomActivity extends FragmentActivity {
                 return false;
             }
         });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public void washingMachineTimer(View v) {
+        TimePicker mTimePicker = (TimePicker) mPopUpManager.getPopupWindow().getContentView().findViewById(R.id.timePickerWashingMachine);
+        int hour = mTimePicker.getHour();
+        int minute = mTimePicker.getMinute();
+        mTtsManager.talkLater("Washing machine will start working at " + String.valueOf(hour) + " " + String.valueOf(minute));
+        mPopUpManager.customInfoToast("Washing machine will start working at " + String.valueOf(hour) + ":" + String.valueOf(minute));
+        mPopUpManager.getPopupWindow().dismiss();
     }
 
     @Override

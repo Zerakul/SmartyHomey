@@ -53,7 +53,7 @@ public class PopUpManager {
         v.getLocationOnScreen(loc_int);
         layoutInflater = (LayoutInflater) appContext.getSystemService(LAYOUT_INFLATER_SERVICE);
         ViewGroup containter = (ViewGroup) layoutInflater.inflate(layout, null);
-        popupWindow = new PopupWindow(containter, 300, 300, true);
+        popupWindow = new PopupWindow(containter, 420, 420, true);
         popupWindow.showAtLocation(v,Gravity.NO_GRAVITY,400,200);
 
         containter.setOnTouchListener(new View.OnTouchListener() {

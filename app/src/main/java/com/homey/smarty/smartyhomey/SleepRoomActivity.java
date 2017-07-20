@@ -93,12 +93,19 @@ public class SleepRoomActivity extends FragmentActivity {
 
     public void warmingBed(View v) {
         ImageView mBedImg = (ImageView) findViewById(R.id.bedTempreatureImg);
+        if(mBedImg.getTag().equals("cold")) {
+            mTtsManager.talkLater("Warming bed");
+            mPopUpManager.customInfoToast("Warming bed");
 
-        mTtsManager.talkLater("Warming bed");
-        mPopUpManager.customInfoToast("Warming bed");
+            mBedImg.setImageResource(R.drawable.hot_temperature);
+            mBedImg.setTag("warm");
+        } else {
+            mTtsManager.talkLater("stop warming bed");
+            mPopUpManager.customInfoToast("stop warming bed");
 
-        mBedImg.setImageResource(R.drawable.hot_temperature);
-        mBedImg.setTag("warm");
+            mBedImg.setImageResource(R.drawable.cold_temperature);
+            mBedImg.setTag("cold");
+        }
     }
 
     private void setFab() {

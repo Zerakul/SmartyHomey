@@ -13,9 +13,7 @@ import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 import com.homey.smarty.smartyhomey.Managers.PopUpManager;
 import com.homey.smarty.smartyhomey.Managers.TTSManager;
 
-/**
- * Created by Seiran on 17/07/2017.
- */
+
 
 public class SleepRoomActivity extends FragmentActivity {
 

@@ -76,6 +76,7 @@
             android:layout_alignTop="@+id/textView3"
             android:layout_alignStart="@+id/spinner"
             android:layout_weight="0.5"
+            android:spinnerMode="dialog"
             android:layout_gravity="bottom" />
     </LinearLayout>
 
@@ -95,6 +96,7 @@
             android:layout_below="@+id/spinner6"
             android:layout_toStartOf="@+id/textView"
             android:layout_weight="0.5"
+
             android:textSize="18sp"
             android:paddingLeft="10dp" />
 
@@ -106,6 +108,7 @@
             android:layout_alignTop="@+id/textView2"
             android:layout_alignStart="@+id/spinner6"
             android:layout_weight="0.5"
+            android:spinnerMode="dialog"
             android:layout_gravity="bottom" />
     </LinearLayout>
 
@@ -136,6 +139,7 @@
             android:layout_alignBottom="@+id/textView"
             android:layout_alignParentEnd="false"
             android:layout_weight="0.5"
+            android:spinnerMode="dialog"
             android:layout_gravity="bottom" />
     </LinearLayout>
 

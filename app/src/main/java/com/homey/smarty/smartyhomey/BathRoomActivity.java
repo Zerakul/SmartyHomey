@@ -17,9 +17,7 @@ import com.homey.smarty.smartyhomey.Managers.NotifierManager;
 import com.homey.smarty.smartyhomey.Managers.PopUpManager;
 import com.homey.smarty.smartyhomey.Managers.TTSManager;
 
-/**
- * Created by Seiran on 17/07/2017.
- */
+
 
 public class BathRoomActivity extends FragmentActivity {
 

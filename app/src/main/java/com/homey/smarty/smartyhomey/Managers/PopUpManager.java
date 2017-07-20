@@ -66,66 +66,10 @@ public class PopUpManager {
 
     }
 
-    /**
-     * Initiate the popup window.
-     * @param layout any layout just to inflate the popup
-     */
-    public void initPopUp(int layout) {
-
-        layoutInflater = (LayoutInflater) appContext.getSystemService(LAYOUT_INFLATER_SERVICE);
-        ViewGroup containter = (ViewGroup) layoutInflater.inflate(layout, null);
-        popupWindow = new PopupWindow(containter, 300, 250, true);
 
 
-    }
-
-    /**
-     * Make popup with user interaction
-     * @param v the view who initiated the popup
-     * @param layout the layout of the popup
-     */
-    public void makePromptPopUp(View v, int layout) {
-
-        int[] loc_int = new int[2];
-        v.getLocationOnScreen(loc_int);
-        layoutInflater = (LayoutInflater) mAcivity.getSystemService(LAYOUT_INFLATER_SERVICE);
-        ViewGroup containter = (ViewGroup) layoutInflater.inflate(layout, null);
-        popupWindow = new PopupWindow(containter, 500, 250, true);
-        popupWindow.showAtLocation(v, Gravity.NO_GRAVITY, 300, 200);
-        containter.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                popupWindow.dismiss();
-                return true;
-            }
-        });
-
-    }
-
-    /**
-     * Special popup window for marker only
-     * @param pnt get marker location on the screen
-     * @param layout layout of the marker
-     */
-    public void makeMarkerPopUp(Point pnt, int layout) {
 
 
-        layoutInflater = (LayoutInflater) mAcivity.getSystemService(LAYOUT_INFLATER_SERVICE);
-
-        ViewGroup containter = (ViewGroup) layoutInflater.inflate(layout, null);
-        popupWindow = new PopupWindow(containter, 235, 250, true);
-        //popupWindow.showAtLocation(mAcivity.findViewById(R.id.mapFragment), Gravity.NO_GRAVITY, pnt.x, pnt.y + 18);
-
-        containter.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                popupWindow.dismiss();
-                return true;
-            }
-        });
-
-
-    }
 
     /**
      * Custom information toast
@@ -149,27 +93,6 @@ public class PopUpManager {
     }
 
 
-    /**
-     * Custom warning toast
-     * @param text the text should be represented
-     */
-    public void customWarningToast(String text){
-
-
-        //Creating the LayoutInflater instance
-        LayoutInflater li = (LayoutInflater) appContext.getSystemService(LAYOUT_INFLATER_SERVICE);
-        //Getting the View object as defined in the custom_warning_toast.xml file
-        View layout = li.inflate(R.layout.custom_warning_toast, (ViewGroup) mAcivity.findViewById(R.id.warningToast));
-
-        Toast toast = new Toast(appContext);
-        TextView iText= (TextView) layout.findViewById(R.id.warningToastTxt);
-        iText.setTextColor(Color.BLACK);
-        iText.setText(text);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.NO_GRAVITY, 0, 250);
-        toast.setView(layout);//setting the view of custom toast layout
-        toast.show();
-    }
 
     /**
      * Custom error toast
@@ -203,27 +126,4 @@ public class PopUpManager {
     }
 
 
-    public void customSettingsToast() {
-        LayoutInflater li = (LayoutInflater) appContext.getSystemService(LAYOUT_INFLATER_SERVICE);
-        //Getting the View object as defined in the custom_settings_popup.xml file
-//        View layout = li.inflate(R.layout.custom_settings_popup, (ViewGroup) mAcivity.findViewById(R.id.settingsPopUp));
-//        Button setBtn = (Button) layout.findViewById(R.id.settBtn);
-
-
-        final Toast toast = new Toast(appContext);
-
-        toast.setDuration(Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.RIGHT, 0, 270);
-        // toast.setView(layout);//setting the view of custom toast layout
-        toast.show();
-//                setBtn.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        Intent myIntent = new Intent(mAcivity, SettingsActivity.class);
-//                        //myIntent.putExtra("key", value); //Optional parameters
-//                        mAcivity.startActivity(myIntent);
-//                        toast.cancel();
-//                    }
-//                });
-    }
 }

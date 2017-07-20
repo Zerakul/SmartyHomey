@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 import com.homey.smarty.smartyhomey.Managers.NotifierManager;
+import com.homey.smarty.smartyhomey.Managers.PopUpManager;
 import com.homey.smarty.smartyhomey.Managers.TTSManager;
 import com.homey.smarty.smartyhomey.Settings.SettingsActivity;
 
@@ -21,6 +22,7 @@ public class MainActivity extends FragmentActivity {
     public FABToolbarLayout layout;
     public TTSManager tts ;
     public NotifierManager nm;
+    public PopUpManager pm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class MainActivity extends FragmentActivity {
 
         tts = new TTSManager(this);
         nm = new NotifierManager(this);
-
+        pm = new PopUpManager(this,MainActivity.this);
         setFab();
     }
 
@@ -78,13 +80,14 @@ public class MainActivity extends FragmentActivity {
     public void onHomeLocTap (View v){
         tts.talkLater("Going Home.  Starting tracking procedure");
 
+        pm.customInfoToast("Going Home. Starting tracking procedure");
 
     }
 
     public void onGroceryCartTap (View v){
         tts.talkLater("Groceries arrived");
-        nm.newNotification("Groceries","New Groceries Arrived ");
-
+        nm.newNotification("Smarty Homey New Message","New Groceries Arrived ");
+        pm.customInfoToast("Groceries arrived");
         ImageView gr = (ImageView) findViewById(R.id.grocery);
 
         gr.setVisibility(View.VISIBLE);
@@ -95,7 +98,7 @@ public class MainActivity extends FragmentActivity {
 
     public void onGroceryTap (View v){
         tts.talkLater("Groceries accepted");
-
+        pm.customInfoToast("Groceries accepted");
 
         ImageView gr = (ImageView) findViewById(R.id.grocery);
 

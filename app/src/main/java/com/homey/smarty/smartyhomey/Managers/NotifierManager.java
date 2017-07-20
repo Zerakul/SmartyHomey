@@ -8,9 +8,7 @@ import com.homey.smarty.smartyhomey.R;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 
-/**
- * Created by Zerakul on 7/19/2017.
- */
+
 
 public class NotifierManager {
 

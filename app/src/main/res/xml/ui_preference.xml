@@ -20,4 +20,19 @@
 
 
         </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="User Credidentals"
+        android:key="pref_key_storage_settings">
+
+
+        <EditTextPreference
+            android:defaultValue="123"
+            android:key="edit_text_preference_1"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Credit Card Number" />
+
+
+    </PreferenceCategory>
 </PreferenceScreen>

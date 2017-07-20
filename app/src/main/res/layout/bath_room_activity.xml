@@ -70,6 +70,13 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.1"
+                android:onClick="heatBath"
+                android:src ="@drawable/bathtub"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
                 android:onClick="startWashingActivity"
                 android:src ="@drawable/start_washing"/>
 
@@ -128,7 +135,20 @@
             android:layout_alignParentStart="true" />
 
 
+        <ImageView
+            android:id="@+id/bathTemprature"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="57dp"
+            android:layout_marginEnd="34dp"
+            android:onClick="startHeatingBath"
+            android:src="@drawable/cold_temperature"
+            android:tag="cold"
+            android:layout_above="@+id/fabtoolbar_toolbar"
+            android:layout_alignParentEnd="true" />
 
     </com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout>
+
+
 
 </RelativeLayout>

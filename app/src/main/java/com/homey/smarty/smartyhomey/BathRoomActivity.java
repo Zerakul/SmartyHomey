@@ -145,6 +145,35 @@ public class BathRoomActivity extends FragmentActivity {
         mLaundaryImg.setTag("empty");
     }
 
+    public void startHeatingBath(View v) {
+        ImageView mBathTemprature = (ImageView) findViewById(R.id.bathTemprature);
+        if(mBathTemprature.getTag().equals("cold")) {
+            mTtsManager.talkLater("The bath is cold");
+            mPopUpManager.customInfoToast("The bath is cold");
+        } else {
+            mTtsManager.talkLater("The bath is warm");
+            mPopUpManager.customInfoToast("The bath is warm");
+        }
+    }
+
+    public void heatBath(View v) {
+        ImageView mBathTemprature = (ImageView) findViewById(R.id.bathTemprature);
+
+        if (mBathTemprature.getTag().equals("cold")) {
+            mTtsManager.talkLater("Heating bath");
+            mPopUpManager.customInfoToast("Heating bath");
+
+            mBathTemprature.setImageResource(R.drawable.hot_temperature);
+            mBathTemprature.setTag("warm");
+        } else {
+            mTtsManager.talkLater("Stopping heating bath");
+            mPopUpManager.customInfoToast("Stopping heating bath");
+
+            mBathTemprature.setImageResource(R.drawable.cold_temperature);
+            mBathTemprature.setTag("cold");
+        }
+    }
+
     private void setFab() {
         View fab;
         layout = (FABToolbarLayout) findViewById(R.id.fabtoolbar);

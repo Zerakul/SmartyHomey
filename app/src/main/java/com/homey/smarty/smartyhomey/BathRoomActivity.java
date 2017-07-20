@@ -170,8 +170,12 @@ public class BathRoomActivity extends FragmentActivity {
         TimePicker mTimePicker = (TimePicker) mPopUpManager.getPopupWindow().getContentView().findViewById(R.id.timePickerWashingMachine);
         int hour = mTimePicker.getHour();
         int minute = mTimePicker.getMinute();
+
         mTtsManager.talkLater("Washing machine will start working at " + String.valueOf(hour) + " " + String.valueOf(minute));
-        mPopUpManager.customInfoToast("Washing machine will start working at " + String.valueOf(hour) + ":" + String.valueOf(minute));
+        if(minute < 10)
+            mPopUpManager.customInfoToast("Washing machine will start working at " + String.valueOf(hour) + ":0" + String.valueOf(minute));
+        else
+            mPopUpManager.customInfoToast("Washing machine will start working at " + String.valueOf(hour) + ":" + String.valueOf(minute));
         mPopUpManager.getPopupWindow().dismiss();
     }
 

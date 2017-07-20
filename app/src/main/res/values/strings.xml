@@ -15,7 +15,7 @@
         completions."
     </string>
     <string name="invalid_sign_in_params">Invalid email or password</string>
-
+<string name="preference_file_key">smarhome</string>
 
     <string-array name="shoppinglist">
         <item>0</item>

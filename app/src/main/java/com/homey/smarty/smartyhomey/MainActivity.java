@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 import com.homey.smarty.smartyhomey.Managers.NotifierManager;
 import com.homey.smarty.smartyhomey.Managers.TTSManager;
+import com.homey.smarty.smartyhomey.Settings.SettingsActivity;
 
 
 public class MainActivity extends FragmentActivity {
@@ -113,7 +114,8 @@ public class MainActivity extends FragmentActivity {
 
     public void onSettingsTap (View v){
 
-
+        Intent myIntent = new Intent(this, SettingsActivity.class);
+        MainActivity.this.startActivity(myIntent);
 
     }
 

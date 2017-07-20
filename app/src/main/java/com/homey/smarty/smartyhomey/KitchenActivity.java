@@ -93,6 +93,15 @@ public class KitchenActivity extends FragmentActivity {
         });
     }
 
+    public void sendToStore(View v){
+
+        tts.talkLater("Groceries list sent to shop");
+
+
+
+
+    }
+
     public void shopingCartTap(View v){
 
         pm.makePopUp(v,R.layout.shopinglist_popup);

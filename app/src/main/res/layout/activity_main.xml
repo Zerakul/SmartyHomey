@@ -76,6 +76,34 @@
                 android:src="@drawable/bedroom_icon"/>
 
 
+            <ImageView
+                android:id="@+id/groceryCart"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:onClick="onGroceryCartTap"
+                android:scaleType="centerInside"
+                android:src="@drawable/grocery_cart"/>
+
+            <ImageView
+                android:id="@+id/homeLocation"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:onClick="onHomeLocTap"
+                android:scaleType="centerInside"
+                android:src="@drawable/home_loc"/>
+
+            <ImageView
+                android:id="@+id/settingsTap"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:onClick="onSettingsTap"
+                android:scaleType="centerInside"
+                android:src="@drawable/settings"/>
+
+
 
 
 
@@ -83,6 +111,17 @@
 
         </LinearLayout>
 
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/groceries"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="38dp"
+            android:id="@+id/grocery"
+            android:onClick="onGroceryTap"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
 
 
     </com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout>

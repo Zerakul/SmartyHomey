@@ -8,8 +8,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
+import com.homey.smarty.smartyhomey.Managers.NotifierManager;
+import com.homey.smarty.smartyhomey.Managers.TTSManager;
 
 
 public class MainActivity extends FragmentActivity {
@@ -22,6 +25,8 @@ public class MainActivity extends FragmentActivity {
 
 
     public FABToolbarLayout layout;
+    public TTSManager tts ;
+    public NotifierManager nm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,9 @@ public class MainActivity extends FragmentActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_main);
+
+        tts = new TTSManager(this);
+        nm = new NotifierManager(this);
 
         setFab();
     }
@@ -72,4 +80,52 @@ public class MainActivity extends FragmentActivity {
         startActivity(i);
     }
 
+
+    public void onHomeLocTap (View v){
+        tts.talkLater("Going Home.  Starting tracking procedure");
+
+
+    }
+
+    public void onGroceryCartTap (View v){
+        tts.talkLater("Groceries arrived");
+        nm.newNotification("Groceries","New Groceries Arrived ");
+
+        ImageView gr = (ImageView) findViewById(R.id.grocery);
+
+        gr.setVisibility(View.VISIBLE);
+
+
+    }
+
+
+    public void onGroceryTap (View v){
+        tts.talkLater("Groceries accepted");
+
+
+        ImageView gr = (ImageView) findViewById(R.id.grocery);
+
+        gr.setVisibility(View.GONE);
+
+
+    }
+
+
+    public void onSettingsTap (View v){
+
+
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        tts.stop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        tts.shutDown();
+    }
 }
